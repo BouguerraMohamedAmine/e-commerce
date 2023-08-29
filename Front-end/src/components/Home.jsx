@@ -1,168 +1,154 @@
 import React from 'react'
-import img from "../assets/icons8-cake-48.png"
+import { FaHeartbeat , FaAward } from 'react-icons/fa';
+import { FaStar, FaUsers, FaCheck, FaMugHot } from 'react-icons/fa';
+import about from "../img/about.jpg";
 function Home() {
+
   return (
     <div>
-       <div class="container-fluid px-0 d-none d-lg-block">
-        <div class="row gx-0">
-            <div class="col-lg-4 text-center bg-secondary py-3">
-                <div class="d-inline-flex align-items-center justify-content-center">
-                    <i class="bi bi-envelope fs-1 text-primary me-3"></i>
-                    <div class="text-start">
-                        <h6 class="text-uppercase mb-1">Email Us</h6>
-                        <span>info@example.com</span>
-                    </div>
-                </div>
-            </div>
-           
-            <div class="col-lg-4 text-center bg-primary border-inner py-3">
-                <div class="d-inline-flex align-items-center justify-content-center">
-                    <a href="index.html" class="navbar-brand">
-                        <h1 class="m-0 text-uppercase text-white"><i class="fa fa-birthday-cake fs-1 text-dark me-3"><img width="24" height="24" src="https://img.icons8.com/material-rounded/24/birthday-cake.png" alt="birthday-cake"/></i>CakeZone</h1>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 text-center bg-secondary py-3">
-                <div class="d-inline-flex align-items-center justify-content-center">
-                    <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
-                    <div class="text-start">
-                        <h6 class="text-uppercase mb-1">Call Us</h6>
-                        <span>+012 345 6789</span>
-                    </div>
-                </div>
-            </div>
+    	<div class="container-fluid bg-primary py-5 mb-5 hero-header">
+				<div class="container py-5">
+					<div class="row justify-content-start">
+						<div class="col-lg-8 text-center text-lg-start">
+							<h1 class="font-secondary text-primary mb-4">Super Crispy</h1>
+							<h1 class="display-1 text-uppercase text-white mb-4">CakeZone</h1>
+							<h1 class="text-uppercase text-white">The Best Cake In London</h1>
+							<div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
+								<a href="" class="btn btn-primary border-inner py-3 px-5 me-5">
+									Read More
+								</a>
+								<button
+									type="button"
+									class="btn-play"
+									data-bs-toggle="modal"
+									data-src="https://www.youtube.com/watch?v=nI2tfHUAN1s"
+									data-bs-target="#videoModal">
+									<span></span>
+								</button>
+								<h5 class="font-weight-normal text-white m-0 ms-4 d-none d-sm-block">
+									Play Video
+								</h5>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+   <div className="container-fluid pt-5">
+      <div className="container">
+        <div
+          className="section-title position-relative text-center mx-auto mb-5 pb-3"
+          style={{ maxWidth: '600px' }}
+        >
+          <h2 className="text-primary font-secondary">About Us</h2>
+          <h1 className="display-4 text-uppercase">Welcome To CakeZone</h1>
         </div>
+        <div className="row gx-5">
+          <div className="col-lg-5 mb-5 mb-lg-0" style={{ minHeight: '400px' }}>
+            <div className="position-relative h-100">
+              <img
+                className="position-absolute w-100 h-100"
+                src={about}
+                style={{ objectFit: 'cover' }}
+                alt="About CakeZone"
+              />
+            </div>
+          </div>
+          <div className="col-lg-6 pb-5">
+            <h4 className="mb-4">
+              Tempor erat elitr rebum clita. Diam dolor diam ipsum erat lorem sed stet labore lorem
+              sit clita duo
+            </h4>
+            <p className="mb-5">
+              Tempor erat elitr at rebum at at clita. Diam dolor diam ipsum et tempor sit. Clita
+              erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et
+              tempor eirmod magna dolore erat amet magna
+            </p>
+            <div className="row g-5">
+              <div className="col-sm-6">
+                <div
+                  className="d-flex align-items-center justify-content-center bg-primary border-inner mb-4"
+                  style={{ width: '90px', height: '90px' }}
+                >
+                 <FaHeartbeat className="text-white" size="2rem" />
+                </div>
+                <h4 className="text-uppercase">100% Healthy</h4>
+                <p className="mb-0">
+                  Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor
+                  vero
+                </p>
+              </div>
+              <div className="col-sm-6">
+                <div
+                  className="d-flex align-items-center justify-content-center bg-primary border-inner mb-4"
+                  style={{ width: '90px', height: '90px' }}
+                >
+                  <FaAward className="text-white" size="2rem" />
+                </div>
+                <h4 className="text-uppercase">Award Winning</h4>
+                <p className="mb-0">
+                  Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor
+                  vero
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     
-      <nav className="navbar navbar-expand-lg navbar-light bg-white">
-        {/* Container wrapper */}
-        <div className="container-fluid">
-          {/* Toggle button */}
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i className="fas fa-bars"></i>
-          </button>
-
-          {/* Collapsible wrapper */}
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            {/* Navbar brand */}
-            <a className="navbar-brand mt-2 mt-lg-0" href="#">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-                height="15"
-                alt="MDB Logo"
-                loading="lazy"
-              />
-            </a>
-            {/* Left links */}
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link" href="#">Dashboard</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Team</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Projects</a>
-              </li>
-            </ul>
-            {/* Left links */}
-          </div>
-          {/* Collapsible wrapper */}
-
-          {/* Right elements */}
-          <div className="d-flex align-items-center">
-            {/* Icon */}
-            <a className="link-secondary me-3" href="#">
-              <i className="fas fa-shopping-cart" >
-              
-              
-              </i>
-            </a>
-
-            {/* Notifications */}
-            <div className="dropdown">
-              <a
-                className="link-secondary me-3 dropdown-toggle hidden-arrow"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <i className="fas fa-bell"></i>
-                <span className="badge rounded-pill badge-notification bg-danger">
-                <img src={img} />
-                1</span>
-              </a>
-              <ul
-                className="dropdown-menu dropdown-menu-end"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <li>
-                  <a className="dropdown-item" href="#">Some news</a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">Another news</a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
+<div className="container-fluid bg-img py-5 mb-5">
+    <div className="container py-5">
+        <div className="row gx-5 gy-4">
+            <div className="col-lg-3 col-md-6">
+                <div className="d-flex">
+                    <div className="bg-primary border-inner d-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px' }}>
+                        <FaStar className="text-white" />
+                    </div>
+                    <div className="ps-4">
+                        <h6 className="text-primary text-uppercase">Our Experience</h6>
+                        <h1 className="display-5 text-white mb-0" data-toggle="counter-up">12345</h1>
+                    </div>
+                </div>
             </div>
-            
-            {/* Avatar */}
-            <div className="dropdown">
-              <a
-                className="dropdown-toggle d-flex align-items-center hidden-arrow"
-                href="#"
-                id="navbarDropdownMenuAvatar"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-                  className="rounded-circle"
-                  height="25"
-                  alt="Black and White Portrait of a Man"
-                  loading="lazy"
-                />
-              </a>
-              <ul
-                className="dropdown-menu dropdown-menu-end"
-                aria-labelledby="navbarDropdownMenuAvatar"
-              >
-                <li>
-                  <a className="dropdown-item" href="#">My profile</a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">Settings</a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">Logout</a>
-                </li>
-              </ul>
+            <div className="col-lg-3 col-md-6">
+                <div className="d-flex">
+                    <div className="bg-primary border-inner d-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px' }}>
+                        <FaUsers className="text-white" />
+                    </div>
+                    <div className="ps-4">
+                        <h6 className="text-primary text-uppercase">Cake Specialist</h6>
+                        <h1 className="display-5 text-white mb-0" data-toggle="counter-up">12345</h1>
+                    </div>
+                </div>
             </div>
-
-            {/* Input and search button */}
-            <div className="input-group">
-              <input type="text" className="form-control" placeholder="Search" aria-label="Search" />
-              <button className="btn btn-primary" type="button">Search</button>
+            <div className="col-lg-3 col-md-6">
+                <div className="d-flex">
+                    <div className="bg-primary border-inner d-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px' }}>
+                        <FaCheck className="text-white" />
+                    </div>
+                    <div className="ps-4">
+                        <h6 className="text-primary text-uppercase">Complete Project</h6>
+                        <h1 className="display-5 text-white mb-0" data-toggle="counter-up">12345</h1>
+                    </div>
+                </div>
             </div>
-          </div>
-          {/* Right elements */}
+            <div className="col-lg-3 col-md-6">
+                <div className="d-flex">
+                    <div className="bg-primary border-inner d-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px' }}>
+                        <FaMugHot className="text-white" />
+                    </div>
+                    <div className="ps-4">
+                        <h6 className="text-primary text-uppercase">Happy Clients</h6>
+                        <h1 className="display-5 text-white mb-0" data-toggle="counter-up">12345</h1>
+                    </div>
+                </div>
+            </div>
         </div>
-        {/* Container wrapper */}
-      </nav>
     </div>
+</div>
+ 
+    </div>
+
   )
 }
 
