@@ -4,8 +4,7 @@ import { BiEnvelope } from "react-icons/bi";
 import axios from 'axios'
 // import { BiPhoneVibrate } from 'react-icons/bi';
 function Navbar({ changemenu , changehome}) {
-
-    const [searchText, setSearchText] = useState("");
+	const [searchText, setSearchText] = useState("");
     const [searchResults, setSearchResults] = useState([]);
 
     const handleSearch = async () => {
@@ -25,8 +24,7 @@ function Navbar({ changemenu , changehome}) {
           setSearchResults([]);
         }
       };
-
-          return (
+	return (
 		<div>
 			<div class="container-fluid px-0 d-none d-lg-block">
 				<div class="row gx-0">
@@ -35,7 +33,7 @@ function Navbar({ changemenu , changehome}) {
 							<BiEnvelope className="fs-1 text-primary me-3" />
 							<div class="text-start">
 								<h6 class="text-uppercase mb-1">Email Us</h6>
-								<span>info@example.com</span>
+								<span>cakini@gmail.com</span>
 							</div>
 						</div>
 					</div>
@@ -65,7 +63,7 @@ function Navbar({ changemenu , changehome}) {
 							</svg>
 							<div class="text-start">
 								<h6 class="text-uppercase mb-1">Call Us</h6>
-								<span>+012 345 6789</span>
+								<span>+07775000</span>
 							</div>
 						</div>
 					</div>
@@ -112,10 +110,8 @@ function Navbar({ changemenu , changehome}) {
 						<a href="contact.html" class="nav-item nav-link">
 							Contact Us
 						</a>
-                        
-                        
-                        </div>
-                        <form className="search-bar" role="search">
+					</div>
+				<form className="search-bar" role="search">
                         <input
                           className="form-control me-2 search-input"
                           type="search"
@@ -144,7 +140,7 @@ function Navbar({ changemenu , changehome}) {
                           )}
                         </div>
                       </form>
-                                  </div>
+				</div>
 			</nav>
 
 			{/* hero */}

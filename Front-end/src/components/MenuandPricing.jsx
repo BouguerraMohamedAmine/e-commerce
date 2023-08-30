@@ -1,40 +1,3 @@
-
-import React from 'react';
-
-const CakeItem = ({ imgSrc, price, title, description }) => (
-    <div className="col-lg-6">
-        <div className="d-flex h-100">
-            <div className="flex-shrink-0">
-                <img className="img-fluid" src={imgSrc} alt="" style={{ width: '150px', height: '85px' }} />
-                <h4 className="bg-dark text-primary p-2 m-0">${price}</h4>
-            </div>
-            <div className="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                <h5 className="text-uppercase">{title}</h5>
-                <span>{description}</span>
-            </div>
-        </div>
-    </div>
-);
-
-const TabContent = ({ tabId, items }) => (
-    <div id={tabId} className={`tab-pane fade show p-0 ${tabId === 'tab-1' ? 'active' : ''}`}>
-        <div className="row g-3">
-            {items.map((item, index) => (
-                <CakeItem key={index} {...item} />
-            ))}
-        </div>
-    </div>
-);
-
-
-const MenuandPricing = () => {
-    const tabs = [
-        { id: 'tab-1', title: 'Birthday', items: [/* ... */] },
-        { id: 'tab-2', title: 'Wedding', items: [/* ... */] },
-        { id: 'tab-3', title: 'Custom', items: [/* ... */] },
-    ];
-
-
 import React , { useEffect , useState } from 'react';
 import axios from 'axios';
 
@@ -108,7 +71,6 @@ const MenuandPricing = () => {
         { id: 'tab-2', title: 'Wedding', items: wedding },
         { id: 'tab-3', title: 'Party', items: party },
     ];
-//commment
 
     return (
         <div className="container-fluid about py-5">

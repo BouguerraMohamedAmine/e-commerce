@@ -619,7 +619,7 @@ h6,
 .forgotLink:hover,
 .body-register a:hover {
   color: #333;
-
+}
 .price-item{
   position: absolute;
   display: inline-block; /* Ensures the element takes up only the necessary width */
