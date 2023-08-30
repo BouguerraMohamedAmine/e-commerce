@@ -6,7 +6,7 @@ import './_custom.scss';
 import Home from "./components/Home.jsx";
 import Navbar from "./components/Navbar.jsx";
 import MenuandPricing from "./components/MenuandPricing";
-
+import Footer from "./components/Footer.jsx";
 function App() {
   const [view, setView]=useState('home')
 
@@ -23,6 +23,7 @@ function App() {
 
    {view==='home' && <Home />}
    {view==='menuandpricing' && <MenuandPricing />}
+   <Footer/>
     </div>
   );
 }
