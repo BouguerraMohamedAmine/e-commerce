@@ -98,9 +98,6 @@ async function getProductsByCategory(req, res) {
 }
 
 
-
-
-
 module.exports = {
   createProduct,
   getProducts,

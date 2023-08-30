@@ -12,7 +12,11 @@ function Navbar({ changemenu , changehome}) {
 							<BiEnvelope className="fs-1 text-primary me-3" />
 							<div class="text-start">
 								<h6 class="text-uppercase mb-1">Email Us</h6>
+
 								<span>info@example.com</span>
+
+								<span>cakini@gmail.com</span>
+
 							</div>
 						</div>
 					</div>
@@ -42,7 +46,11 @@ function Navbar({ changemenu , changehome}) {
 							</svg>
 							<div class="text-start">
 								<h6 class="text-uppercase mb-1">Call Us</h6>
+
 								<span>+012 345 6789</span>
+
+								<span>+07775000</span>
+
 							</div>
 						</div>
 					</div>
