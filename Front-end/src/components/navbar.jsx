@@ -3,9 +3,10 @@ import { FaBirthdayCake } from "react-icons/fa";
 import { BiEnvelope } from "react-icons/bi";
 import axios from 'axios'
 // import { BiPhoneVibrate } from 'react-icons/bi';
-function Navbar({ changemenu , changehome}) {
+function Navbar({ changemenu , changehome , changecontact , changemasterchefs}) {
 	const [searchText, setSearchText] = useState("");
-    const [searchResults, setSearchResults] = useState([]);
+	const [searchResults, setSearchResults] = useState([]);
+
 
     const handleSearch = async () => {
         try {
@@ -33,7 +34,7 @@ function Navbar({ changemenu , changehome}) {
 							<BiEnvelope className="fs-1 text-primary me-3" />
 							<div class="text-start">
 								<h6 class="text-uppercase mb-1">Email Us</h6>
-								<span>cakini@gmail.com</span>
+								<span>Cakini@gmail.com</span>
 							</div>
 						</div>
 					</div>
@@ -105,11 +106,26 @@ function Navbar({ changemenu , changehome}) {
 							}}>
 							Menu & Pricing
 						</a>
-						<a class="nav-item nav-link">Master Chefs</a>
-
-						<a href="contact.html" class="nav-item nav-link">
+						<a
+						href="#"
+						className="nav-item nav-link"
+						onClick={(event) => {
+						  event.preventDefault();
+						  changemasterchefs();
+						}}
+					  >
+						Master Chefs
+					    </a>
+						<a href="#" 
+						className="nav-item nav-link"
+						onClick={(event) => {
+						event.preventDefault();
+						changecontact();
+						}}>
 							Contact Us
 						</a>
+						
+						
 					</div>
 				<form className="search-bar" role="search">
                         <input
@@ -122,23 +138,13 @@ function Navbar({ changemenu , changehome}) {
                         />
                         <button
                         className="btn btn-outline-success search-btn"
-                        type="button"  // Change the type to "button" instead of "submit"
+                        type="button"  
                         onClick={handleSearch}
                       >
                         Search
                       </button>
                     
-                        <div className="search-results">
-                          {searchResults.length > 0 ? (
-                            searchResults.map((result) => (
-                              <div key={result._id}>
-                              <img src={result.image}/>
-                              </div>
-                            ))
-                          ) : (
-                            <div>No results found.</div>
-                          )}
-                        </div>
+                    
                       </form>
 				</div>
 			</nav>
