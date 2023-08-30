@@ -10,5 +10,5 @@ router.put('/products/:id', productController.updateProduct);
 router.delete('/products/:id', productController.deleteProduct); 
 router.get('/products/reviews', productController.getProductsByReviews); 
 router.get('/products/name/:name', productController.getProductByName); 
-router.get('/products/category' , productController.getProductsByCategory)
+router.get('/products/category/:category' , productController.getProductsByCategory)
 module.exports = router;

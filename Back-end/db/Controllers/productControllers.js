@@ -89,11 +89,11 @@ async function getProductByName(req, res) {
 
 async function getProductsByCategory(req, res) {
   try {
-    const category = req.query.category; // Assuming category is provided in the query string
-    const products = await Product.find({ category });
+    const category = req.params.category;
+    const products = await Product.find({ category: category });
     res.status(200).json(products);
   } catch (error) {
-    res.status(500).json({ error: "An error occurred while fetching products by category." });
+    res.status(500).json({ error: "Internal server error" });
   }
 }
 
