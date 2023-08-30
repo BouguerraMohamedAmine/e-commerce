@@ -1,9 +1,32 @@
-import React from "react";
+import React , {useState} from "react";
 import { FaBirthdayCake } from "react-icons/fa";
 import { BiEnvelope } from "react-icons/bi";
+import axios from 'axios'
 // import { BiPhoneVibrate } from 'react-icons/bi';
 function Navbar({ changemenu , changehome}) {
-	return (
+
+    const [searchText, setSearchText] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
+
+    const handleSearch = async () => {
+        try {
+          if (searchText.trim() === "") {
+            console.error("Search text is empty.");
+            return;
+          }
+          console.log("Fetching search results for:", searchText);
+          const response = await axios.get(
+            `http://127.0.0.1:5000/products/category/${searchText}`
+          );
+          console.log("Response data:", response.data);
+          setSearchResults(response.data);
+        } catch (error) {
+          console.error("Error fetching search results:", error.response);
+          setSearchResults([]);
+        }
+      };
+
+          return (
 		<div>
 			<div class="container-fluid px-0 d-none d-lg-block">
 				<div class="row gx-0">
@@ -12,11 +35,7 @@ function Navbar({ changemenu , changehome}) {
 							<BiEnvelope className="fs-1 text-primary me-3" />
 							<div class="text-start">
 								<h6 class="text-uppercase mb-1">Email Us</h6>
-
 								<span>info@example.com</span>
-
-								<span>cakini@gmail.com</span>
-
 							</div>
 						</div>
 					</div>
@@ -46,11 +65,7 @@ function Navbar({ changemenu , changehome}) {
 							</svg>
 							<div class="text-start">
 								<h6 class="text-uppercase mb-1">Call Us</h6>
-
 								<span>+012 345 6789</span>
-
-								<span>+07775000</span>
-
 							</div>
 						</div>
 					</div>
@@ -97,8 +112,39 @@ function Navbar({ changemenu , changehome}) {
 						<a href="contact.html" class="nav-item nav-link">
 							Contact Us
 						</a>
-					</div>
-				</div>
+                        
+                        
+                        </div>
+                        <form className="search-bar" role="search">
+                        <input
+                          className="form-control me-2 search-input"
+                          type="search"
+                          placeholder="Type something ..."
+                          aria-label="Search"
+                          value={searchText}
+                          onChange={(e) => setSearchText(e.target.value)}
+                        />
+                        <button
+                        className="btn btn-outline-success search-btn"
+                        type="button"  // Change the type to "button" instead of "submit"
+                        onClick={handleSearch}
+                      >
+                        Search
+                      </button>
+                    
+                        <div className="search-results">
+                          {searchResults.length > 0 ? (
+                            searchResults.map((result) => (
+                              <div key={result._id}>
+                              <img src={result.image}/>
+                              </div>
+                            ))
+                          ) : (
+                            <div>No results found.</div>
+                          )}
+                        </div>
+                      </form>
+                                  </div>
 			</nav>
 
 			{/* hero */}

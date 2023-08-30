@@ -1,7 +1,9 @@
+
 .logo-pic{
   height: 80px;
   width: 80px;
 }
+
 /********** Template CSS **********/
 :root {
   --primary: #E88F2A;
@@ -9,6 +11,29 @@
   --light: #FFFFFF;
   --dark: #2B2825;
 }
+
+
+.navbar-expand-lg .navbar-collapse{
+  display: flex !important;
+  flex-basis: auto;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 43%;
+  align-items: center;
+  padding-right: 50px;
+}
+
+
+.search-bar{
+  display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+
+
+
 
 .font-secondary {
   font-family: 'Pacifico', cursive;
@@ -317,6 +342,284 @@ h6,
   background: linear-gradient(rgba(43, 40, 37, .5), rgba(43, 40, 37, .5)), url(./img/bg.jpg) center center no-repeat;
   background-size: cover;
 }
+
+
+/* _authentication.scss */
+
+/* _authentication.scss */
+
+/* Main body style */
+.body-auth {
+	background: linear-gradient(135deg, #f06, #3c9);
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-family: 'Arial', sans-serif;
+	width: 1920px
+  }
+  
+  .form_main {
+	width: 320px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.95);
+	padding: 40px;
+	border-radius: 10px;
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+	transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .form_main:hover {
+	transform: translateY(-5px);
+	box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .form_main::before {
+	content: "";
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	background: linear-gradient(45deg, #f06, #3c9);
+	transform: rotate(45deg) scale(1);
+	left: -150px;
+	top: -100px;
+	border-radius: 50%;
+	opacity: 0.1;
+	z-index: -1;
+	animation: rotateColors 6s linear infinite;
+  }
+  
+  @keyframes rotateColors {
+	0% {
+	  filter: hue-rotate(0deg);
+	}
+	100% {
+	  filter: hue-rotate(360deg);
+	}
+  }
+  
+  .heading {
+	font-size: 2.5em;
+	color: #333;
+	font-weight: 700;
+	margin-bottom: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	z-index: 2;
+	transition: color 0.3s;
+  }
+  
+  .inputContainer {
+	width: 100%;
+	position: relative;
+	margin-bottom: 20px;
+  }
+  
+  .inputIcon {
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #777;
+  }
+  
+  .inputField {
+	width: 100%;
+	padding: 10px 40px 10px 35px;
+	background-color: rgba(255, 255, 255, 0.7);
+	border: none;
+	border-radius: 5px;
+	color: #333;
+	font-size: 1em;
+	font-weight: 500;
+	transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .inputField:hover {
+	background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .inputField:focus {
+	background-color: white;
+	transform: scale(1.02);
+	outline: none;
+  }
+  
+  .buttonn {
+	width: 100%;
+	border: none;
+	background: linear-gradient(135deg, #f06, #3c9);
+	color: white;
+	font-size: 1em;
+	font-weight: 600;
+	padding: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background 0.3s, filter 0.3s;
+	margin-top: 10px;
+  }
+  
+  .buttonn:hover {
+	background: linear-gradient(135deg, #f06, #3c9);
+	filter: brightness(1.2);
+  }
+  
+  .forgotLink {
+	font-size: 0.9em;
+	color: #777;
+	text-decoration: none;
+	transition: color 0.3s;
+  }
+  
+  .forgotLink:hover {
+	color: #333;
+  }
+  
+
+
+/* registration css  */
+.body-register {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		background: linear-gradient(135deg, #f06, #3c9);
+		width: 1920px;
+		margin: 0;
+		font-family: 'Arial', sans-serif;
+	  }
+	  
+	  .body-register form {
+		width: 320px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: rgba(255, 255, 255, 0.95);
+		padding: 40px;
+		border-radius: 10px;
+		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+		overflow: hidden;
+		transition: transform 0.3s, box-shadow 0.3s;
+	  }
+	  
+	  .body-register form:hover {
+		transform: translateY(-5px);
+		box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+	  }
+	  
+	  
+	  .body-register form::before {
+		content: "";
+		position: absolute;
+		width: 300px;
+		height: 300px;
+		background: linear-gradient(45deg, #f06, #3c9);
+		transform: rotate(45deg) scale(1);
+		left: -150px;
+		top: -100px;
+		border-radius: 50%;
+		opacity: 0.1;
+		z-index: -1;
+		animation: rotateColors 6s linear infinite;
+	  }
+	  
+	  .body-register h2 {
+		font-size: 2.5em;
+		color: #333;
+		font-weight: 700;
+		margin-bottom: 20px;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		z-index: 2;
+		transition: color 0.3s;
+	  }
+	  .body-register div {
+		width: 100%;
+		position: relative;
+		margin-bottom: 20px;
+	  }
+
+	  .inputIcon {
+		position: absolute;
+		left: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		color: #777;
+	  }
+
+	  .body-register input[type="text"],
+.body-register input[type="email"],
+.body-register input[type="password"],
+.body-register input[type="tel"] {
+  width: 100%;
+  padding: 10px 40px 10px 35px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 5px;
+  color: #333;
+  font-size: 1em;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+	  
+.inputField:hover,
+.body-register input[type="text"]:hover,
+.body-register input[type="email"]:hover,
+.body-register input[type="password"]:hover,
+.body-register input[type="tel"]:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.inputField:focus,
+.body-register input[type="text"]:focus,
+.body-register input[type="email"]:focus,
+.body-register input[type="password"]:focus,
+.body-register input[type="tel"]:focus {
+  background-color: white;
+  transform: scale(1.02);
+  outline: none;
+}
+
+.buttonn,
+.body-register button {
+  width: 100%;
+  border: none;
+  background: linear-gradient(135deg, #f06, #3c9);
+  color: white;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, filter 0.3s;
+  margin-top: 10px;
+}
+
+.buttonn:hover,
+.body-register button:hover {
+  background: linear-gradient(135deg, #f06, #3c9);
+  filter: brightness(1.2);
+}
+
+.forgotLink,
+.body-register a {
+  font-size: 0.9em;
+  color: #777;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.forgotLink:hover,
+.body-register a:hover {
+  color: #333;
+
 .price-item{
   position: absolute;
   display: inline-block; /* Ensures the element takes up only the necessary width */
@@ -329,4 +632,5 @@ h6,
   color: white;
   font-size: 16px;
   border-radius: 50%;
+
 }

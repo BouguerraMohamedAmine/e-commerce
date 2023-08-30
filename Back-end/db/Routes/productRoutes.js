@@ -1,14 +1,16 @@
 const express = require('express');
-const productController = require('../Controllers/productControllers'); // Corrected path
+const productController = require('../Controllers/productControllers'); 
 
 const router = express.Router();
 
-router.post('/products', productController.createProduct); // Corrected function name
-router.get('/products', productController.getProducts); // Corrected function name
-router.get('/products/:id', productController.getProductById); // Corrected function name
-router.put('/products/:id', productController.updateProduct); // Corrected function name
-router.delete('/products/:id', productController.deleteProduct); // Corrected function name
-router.get('/products/reviews', productController.getProductsByReviews); // Corrected function name
-router.get('/products/name/:name', productController.getProductByName); // Corrected function name
+
+router.post('/products', productController.createProduct); 
+router.get('/products', productController.getProducts); 
+router.get('/products/:id', productController.getProductById); 
+router.put('/products/:id', productController.updateProduct); 
+router.delete('/products/:id', productController.deleteProduct); 
+router.get('/products/reviews', productController.getProductsByReviews); 
+router.get('/products/name/:name', productController.getProductByName); 
+
 router.get('/products/category/:category' , productController.getProductsByCategory)
 module.exports = router;

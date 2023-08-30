@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema({
   image: String,
   phoneNumber: String,
   city: String,
+  using : String,
   reviewedProducts: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Product',
