@@ -3,8 +3,13 @@ import { FaBirthdayCake } from "react-icons/fa";
 import { BiEnvelope } from "react-icons/bi";
 import axios from 'axios'
 // import { BiPhoneVibrate } from 'react-icons/bi';
-function Navbar({ changemenu , changehome , Searches ,changesearch}) {
+
+function Navbar({ changemenu , changehome , changecontact , changemasterchefs, Searches,changesearch}) {
+
 	const [searchText, setSearchText] = useState("");
+
+
+
 
 
     const handleSearch = async () => {
@@ -118,11 +123,26 @@ function Navbar({ changemenu , changehome , Searches ,changesearch}) {
 							}}>
 							Menu & Pricing
 						</a>
-						<a class="nav-item nav-link">Master Chefs</a>
-
-						<a href="contact.html" class="nav-item nav-link">
+						<a
+						href="#"
+						className="nav-item nav-link"
+						onClick={(event) => {
+						  event.preventDefault();
+						  changemasterchefs();
+						}}
+					  >
+						Master Chefs
+					    </a>
+						<a href="#" 
+						className="nav-item nav-link"
+						onClick={(event) => {
+						event.preventDefault();
+						changecontact();
+						}}>
 							Contact Us
 						</a>
+						
+						
 					</div>
 				<form className="search-bar" role="search">
                         <input
@@ -135,7 +155,7 @@ function Navbar({ changemenu , changehome , Searches ,changesearch}) {
                         />
                         <button
                         className="btn btn-outline-success search-btn"
-                        type="button"  // Change the type to "button" instead of "submit"
+                        type="button"  
                         onClick={handleSearch}
 						style={{    "min-width":" 100px"}}
                       >
