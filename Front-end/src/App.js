@@ -16,8 +16,8 @@ function App() {
   const [view, setView] = useState('authentication');
   const [searchResults, setSearchResults] = useState([]);
 
-  const SearchResults =(search)={
-
+  const Searches =(search)={
+setSearchResults(search)
   }
   const changemenu = () => {
     setView('menuandpricing');
