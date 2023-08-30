@@ -13,8 +13,12 @@ import Registration from './components/Registration';
 import Authentication from './components/Authentification.jsx';
 
 function App() {
-  const [view, setView] = useState('Home');
+  const [view, setView] = useState('authentication');
+  const [searchResults, setSearchResults] = useState([]);
 
+  const Searches =(search)={
+setSearchResults(search)
+  }
   const changemenu = () => {
     setView('menuandpricing');
   }
