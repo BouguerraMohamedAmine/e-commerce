@@ -13,7 +13,7 @@ import Registration from './components/Registration';
 import Authentication from './components/Authentification.jsx';
 
 function App() {
-  const [view, setView] = useState('home');
+  const [view, setView] = useState('authentication');
 
   const changemenu = () => {
     setView('menuandpricing');
@@ -55,6 +55,7 @@ function App() {
       )}
 
 
+        </div>
   );
 }
 
