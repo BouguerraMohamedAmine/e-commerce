@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function Authentication({ change , current , regist}) {
+function Authentication({ changehome , current , regist,currentuser}) {
     const [users, setUsers] = useState([]);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -22,10 +22,10 @@ function Authentication({ change , current , regist}) {
 
     const handleLogin = () => {
         const user = users.find(user => user.email === email && user.password === password);
-        console.log('this u tried' ,user);
+        // console.log('this u tried' ,user);
         if (user) {
-        current(user)
-            change()
+            currentuser(user)
+            changehome()
 
         } else {
             alert('Login failed');
