@@ -11,10 +11,9 @@ import Navbar from './components/Navbar.jsx';
 import MenuandPricing from "./components/MenuandPricing";
 import Registration from './components/Registration';
 import Authentication from './components/Authentification.jsx';
-import ContactUs from './components/ContactUs';
-import MasterChefs from './components/MasterChefs';
+
 function App() {
-  const [view, setView] = useState('home');
+  const [view, setView] = useState('Home');
 
   const changemenu = () => {
     setView('menuandpricing');
@@ -22,14 +21,6 @@ function App() {
   
   const changehome = () => {
     setView('home');
-  }
-
-  const changemasterchefs = () => {
-    setView('masterchefs');
-  }
-
-  const changecontact = () => {
-    setView('contact');
   }
 
   const login = () => {
@@ -57,16 +48,12 @@ function App() {
         <Registration auth={auth} />
       ) : (
         <div className="App">
-          <Navbar changemenu={changemenu} changehome={changehome} changecontact={changecontact} changemasterchefs={changemasterchefs} />
+          <Navbar changemenu={changemenu} changehome={changehome} />
           {view === 'home' && <Home />}
           {view === 'menuandpricing' && <MenuandPricing />}
-          {view === 'contact' && <ContactUs/>}
-          {view === 'masterchefs' && <MasterChefs/>}
-
-          </div>
-
+        </div>
       )}
-      <Footer />
+
 
         </div>
   );
