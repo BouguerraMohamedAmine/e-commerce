@@ -71,7 +71,7 @@ const MenuandPricing = () => {
         { id: 'tab-2', title: 'Wedding', items: wedding },
         { id: 'tab-3', title: 'Party', items: party },
     ];
-
+//commment
     return (
         <div className="container-fluid about py-5">
             <div className="container">
