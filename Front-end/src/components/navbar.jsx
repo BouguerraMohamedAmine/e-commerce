@@ -5,7 +5,7 @@ import axios from 'axios'
 // import { BiPhoneVibrate } from 'react-icons/bi';
 function Navbar({ changemenu , changehome}) {
 	const [searchText, setSearchText] = useState("");
-    const [searchResults, setSearchResults] = useState([]);
+
 
     const handleSearch = async () => {
         try {
@@ -33,7 +33,7 @@ function Navbar({ changemenu , changehome}) {
 							<BiEnvelope className="fs-1 text-primary me-3" />
 							<div class="text-start">
 								<h6 class="text-uppercase mb-1">Email Us</h6>
-								<span>cakini@gmail.com</span>
+								<span>Cakini@gmail.com</span>
 							</div>
 						</div>
 					</div>
@@ -128,17 +128,7 @@ function Navbar({ changemenu , changehome}) {
                         Search
                       </button>
                     
-                        <div className="search-results">
-                          {searchResults.length > 0 ? (
-                            searchResults.map((result) => (
-                              <div key={result._id}>
-                              <img src={result.image}/>
-                              </div>
-                            ))
-                          ) : (
-                            <div>No results found.</div>
-                          )}
-                        </div>
+                    
                       </form>
 				</div>
 			</nav>

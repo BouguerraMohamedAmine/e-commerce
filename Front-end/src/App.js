@@ -14,7 +14,11 @@ import Authentication from './components/Authentification.jsx';
 
 function App() {
   const [view, setView] = useState('authentication');
+  const [searchResults, setSearchResults] = useState([]);
 
+  const SearchResults =(search)={
+
+  }
   const changemenu = () => {
     setView('menuandpricing');
   }
