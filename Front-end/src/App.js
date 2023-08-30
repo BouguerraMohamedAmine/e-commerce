@@ -6,6 +6,7 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import './App.css';
 import './_custom.scss';
 import Home from "./components/Home.jsx";
+import Search from "./components/Search.jsx"
 import Footer from "./components/Footer.jsx";
 import Navbar from './components/Navbar.jsx';
 import MenuandPricing from "./components/MenuandPricing";
@@ -15,9 +16,15 @@ import Authentication from './components/Authentification.jsx';
 function App() {
   const [view, setView] = useState('authentication');
   const [searchResults, setSearchResults] = useState([]);
-
-  const Searches =(search)={
+  const [user, setUser] = useState([]);
+  
+  const currentuser =(newuser)=>{
+    setUser(newuser)
+  }
+ console.log(user);
+  const Searches = (search)=>{
 setSearchResults(search)
+console.log("im in app ", searchResults);
   }
   const changemenu = () => {
     setView('menuandpricing');
@@ -27,13 +34,13 @@ setSearchResults(search)
     setView('home');
   }
 
-  const login = () => {
-    setView('');
-  }
+ const changesearch=()=>{
+  setView("search")
+ }
 
   const regist = () => {
     setView('registration');
-    console.log(view);
+
   }
   
   const auth = () => {
@@ -44,20 +51,22 @@ setSearchResults(search)
     <div>
       {view === 'authentication' ? (
         <Authentication 
-          change={changehome}
-          current={login}
+          changehome={changehome}
+          currentuser={currentuser}
           regist={regist}
+          
         />
       ) : view === 'registration' ? (
         <Registration auth={auth} />
       ) : (
         <div className="App">
-          <Navbar changemenu={changemenu} changehome={changehome} />
-          {view === 'home' && <Home />}
+          <Navbar changemenu={changemenu} changehome={changehome} Searches={Searches} changesearch={changesearch}/>
+          {view === 'home' && <Home user={user}/>}
           {view === 'menuandpricing' && <MenuandPricing />}
+          {view ==="search" && <Search searchResults={searchResults}/>}
+      <Footer/>
         </div>
       )}
-
 
         </div>
   );

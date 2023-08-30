@@ -3,27 +3,40 @@ import { FaBirthdayCake } from "react-icons/fa";
 import { BiEnvelope } from "react-icons/bi";
 import axios from 'axios'
 // import { BiPhoneVibrate } from 'react-icons/bi';
-function Navbar({ changemenu , changehome}) {
+function Navbar({ changemenu , changehome , Searches ,changesearch}) {
 	const [searchText, setSearchText] = useState("");
 
 
     const handleSearch = async () => {
-        try {
-          if (searchText.trim() === "") {
-            console.error("Search text is empty.");
-            return;
-          }
-          console.log("Fetching search results for:", searchText);
-          const response = await axios.get(
-            `http://127.0.0.1:5000/products/category/${searchText}`
-          );
-          console.log("Response data:", response.data);
-          setSearchResults(response.data);
-        } catch (error) {
-          console.error("Error fetching search results:", error.response);
-          setSearchResults([]);
-        }
-      };
+		changesearch();
+		try {
+			if (searchText.trim() === "") {
+				console.error("Search text is empty.");
+				return;
+			}
+	
+			console.log("Fetching all products.");
+			const response = await axios.get(`http://127.0.0.1:5000/products`);
+	
+			const filteredProducts = response.data.filter((product) => {
+				const lowerSearchText = searchText.toLowerCase();
+				return (
+					product.name.toLowerCase().includes(lowerSearchText) ||
+					product.description.toLowerCase().includes(lowerSearchText) ||
+					product.price.toLowerCase().includes(lowerSearchText) ||
+					product.category.toLowerCase().includes(lowerSearchText)
+				);
+			});
+	
+			Searches(filteredProducts);
+			console.log("Filtered products:", filteredProducts);
+		} catch (error) {
+			console.error("Error fetching products:", error.response);
+			Searches([]);
+		}
+	};
+	
+	
 	return (
 		<div>
 			<div class="container-fluid px-0 d-none d-lg-block">
@@ -124,6 +137,7 @@ function Navbar({ changemenu , changehome}) {
                         className="btn btn-outline-success search-btn"
                         type="button"  // Change the type to "button" instead of "submit"
                         onClick={handleSearch}
+						style={{    "min-width":" 100px"}}
                       >
                         Search
                       </button>

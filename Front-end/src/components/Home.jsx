@@ -2,8 +2,9 @@ import React from 'react'
 import { FaHeartbeat , FaAward } from 'react-icons/fa';
 import { FaStar, FaUsers, FaCheck, FaMugHot } from 'react-icons/fa';
 import about from "../img/about.jpg";
-function Home() {
-
+import AddPost from "./AddPost.jsx"
+function Home({user}) {
+console.log("inhome",user);
   return (
     <div>
     	<div class="container-fluid bg-primary py-5 mb-5 hero-header">
@@ -97,53 +98,10 @@ function Home() {
       </div>
     </div>
     
-<div className="container-fluid bg-img py-5 mb-5">
-    <div className="container py-5">
-        <div className="row gx-5 gy-4">
-            <div className="col-lg-3 col-md-6">
-                <div className="d-flex">
-                    <div className="bg-primary border-inner d-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px' }}>
-                        <FaStar className="text-white" />
-                    </div>
-                    <div className="ps-4">
-                        <h6 className="text-primary text-uppercase">Our Experience</h6>
-                        <h1 className="display-5 text-white mb-0" data-toggle="counter-up">12345</h1>
-                    </div>
-                </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-                <div className="d-flex">
-                    <div className="bg-primary border-inner d-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px' }}>
-                        <FaUsers className="text-white" />
-                    </div>
-                    <div className="ps-4">
-                        <h6 className="text-primary text-uppercase">Cake Specialist</h6>
-                        <h1 className="display-5 text-white mb-0" data-toggle="counter-up">12345</h1>
-                    </div>
-                </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-                <div className="d-flex">
-                    <div className="bg-primary border-inner d-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px' }}>
-                        <FaCheck className="text-white" />
-                    </div>
-                    <div className="ps-4">
-                        <h6 className="text-primary text-uppercase">Complete Project</h6>
-                        <h1 className="display-5 text-white mb-0" data-toggle="counter-up">12345</h1>
-                    </div>
-                </div>
-            </div>
-            <div className="col-lg-3 col-md-6">
-                <div className="d-flex">
-                    <div className="bg-primary border-inner d-flex align-items-center justify-content-center mb-3" style={{ width: '60px', height: '60px' }}>
-                        <FaMugHot className="text-white" />
-                    </div>
-                    <div className="ps-4">
-                        <h6 className="text-primary text-uppercase">Happy Clients</h6>
-                        <h1 className="display-5 text-white mb-0" data-toggle="counter-up">12345</h1>
-                    </div>
-                </div>
-            </div>
+<div className="container-fluid bg-img py-5 mb-5" style={{"margin-top":"30px"}}>
+    <div className="container py-5" >
+        <div className="row gx-5 gy-4" style={{ flexDirection: 'column' }}>
+            {user.using=== 'selling' && <AddPost  />}
         </div>
     </div>
 </div>
