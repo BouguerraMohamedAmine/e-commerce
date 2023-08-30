@@ -10,5 +10,5 @@ router.put('/products/:id', productController.updateProduct); // Corrected funct
 router.delete('/products/:id', productController.deleteProduct); // Corrected function name
 router.get('/products/reviews', productController.getProductsByReviews); // Corrected function name
 router.get('/products/name/:name', productController.getProductByName); // Corrected function name
-
+router.get('/products/category/:category' , productController.getProductsByCategory)
 module.exports = router;

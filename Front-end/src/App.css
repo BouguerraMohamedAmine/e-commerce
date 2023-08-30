@@ -317,3 +317,16 @@ h6,
   background: linear-gradient(rgba(43, 40, 37, .5), rgba(43, 40, 37, .5)), url(./img/bg.jpg) center center no-repeat;
   background-size: cover;
 }
+.price-item{
+  position: absolute;
+  display: inline-block; /* Ensures the element takes up only the necessary width */
+  width: 20px; /* Set the width and height to the same value for a circular shape */
+  height: 20px;
+  margin: 5px;
+  line-height: 20px; /* Vertically centers the content */
+  text-align: center; /* Horizontally centers the content */
+  background-color: #726f6fbf; /* You can change this to your desired background color */
+  color: white;
+  font-size: 16px;
+  border-radius: 50%;
+}

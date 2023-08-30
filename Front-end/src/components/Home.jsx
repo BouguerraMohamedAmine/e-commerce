@@ -17,14 +17,15 @@ function Home() {
 								<a href="" class="btn btn-primary border-inner py-3 px-5 me-5">
 									Read More
 								</a>
-								<button
+								<a href="https://www.youtube.com/watch?v=nI2tfHUAN1s"><button
 									type="button"
 									class="btn-play"
-									data-bs-toggle="modal"
+									// data-bs-toggle="modal"
 									data-src="https://www.youtube.com/watch?v=nI2tfHUAN1s"
 									data-bs-target="#videoModal">
 									<span></span>
 								</button>
+                </a>
 								<h5 class="font-weight-normal text-white m-0 ms-4 d-none d-sm-block">
 									Play Video
 								</h5>
