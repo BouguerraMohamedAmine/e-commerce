@@ -2,7 +2,7 @@ import React , {useState} from "react";
 import { FaBirthdayCake } from "react-icons/fa";
 import { BiEnvelope } from "react-icons/bi";
 import axios from 'axios'
-
+// import { BiPhoneVibrate } from 'react-icons/bi';
 function Navbar({ changemenu , changehome}) {
 
     const [searchText, setSearchText] = useState("");
