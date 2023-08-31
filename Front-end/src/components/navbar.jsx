@@ -4,7 +4,7 @@ import { BiEnvelope } from "react-icons/bi";
 import axios from 'axios'
 // import { BiPhoneVibrate } from 'react-icons/bi';
 
-function Navbar({ changemenu , changehome , changecontact , changemasterchefs, Searches,changesearch}) {
+function Navbar({changeRc,changehome, changemenu  ,  changemasterchefs ,changecontact , Searches,changesearch  , changeforums}) {
 
 	const [searchText, setSearchText] = useState("");
 
@@ -141,8 +141,26 @@ function Navbar({ changemenu , changehome , changecontact , changemasterchefs, S
 						}}>
 							Contact Us
 						</a>
+					
+
+						<a
+						href="menu.html"
+						className="nav-item nav-link"
+						onClick={(event) => {
+							event.preventDefault();
+							changeRc();
+						}}>
+							tutorials
+						</a>
+				
+							
+							
+							
+							
 						
-						
+
+
+
 					</div>
 				<form className="search-bar" role="search">
                         <input
