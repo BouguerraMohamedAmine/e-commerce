@@ -38,8 +38,8 @@ const usin={using:usageType}
 
   return (
     <div className='body-register'>
-      <h2 >Sign Up</h2>
-      <form>
+    <form style={{width:"500px" , "font-family":"monoscope"}}>
+    <h2 style={{"margin-bottom":"20PX"}} >Sign Up</h2>
         <div>
           <label>Username:</label>
           <input
@@ -95,8 +95,9 @@ const usin={using:usageType}
           />
           <div>
           <label>Usage Type:</label>
-          <div>
-            <label>
+          <div >
+            <label style={{"cursor": "pointer"   ,  "font-size": "20px",
+            "font-weight": "bold", "margin-top":"8px"}}>
               <input
                 type="checkbox"
                 name="usageType"
@@ -105,7 +106,8 @@ const usin={using:usageType}
               />
               Buying
             </label>
-            <label>
+            <label style={{"cursor": "pointer"   ,  "font-size": "20px",
+            "font-weight": "bold"}}>
               <input
                 type="checkbox"
                 name="usageType"
