@@ -13,6 +13,11 @@
   --dark: #2B2825;
 }
 
+.logo{
+  margin-left: 40px;
+  color: white ;
+}
+
 
 .navbar-expand-lg .navbar-collapse{
   display: flex !important;
@@ -85,7 +90,7 @@ h6,
   bottom: 10px;
   left: 10px;
   background: none;
-  border: 1px solid var(--light);
+ 
   z-index: 0;
 }
 
@@ -546,6 +551,8 @@ h6,
   width: 100%;
   position: relative;
   margin-bottom: 20px;
+  display: flex;
+    flex-direction: column;
 }
 
 .inputIcon {
@@ -695,3 +702,4 @@ h6,
   cursor: pointer;
   border-radius: 5px;
 }
+
