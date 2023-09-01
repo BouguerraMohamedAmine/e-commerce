@@ -44,6 +44,7 @@ function Navbar({changeRc,changehome, changemenu  ,  changemasterchefs ,changeco
 	
 	return (
 		<div>
+<<<<<<< HEAD
 			{/* <div class="container-fluid px-0 d-none d-lg-block">
 				<div class="row gx-0">
 					<div class="col-lg-4 text-center bg-secondary py-3">
@@ -89,13 +90,13 @@ function Navbar({changeRc,changehome, changemenu  ,  changemasterchefs ,changeco
 			</div> */}
 			{/* <!-- Topbar End --> */}
 
+=======
+>>>>>>> a4c00c86cc8ba965312a5d4048e657e3bc097838
 			{/* <!-- Navbar Start --> */}
 			<nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-				<a href="index.html" class="navbar-brand d-block d-lg-none">
-					<h1 class="m-0 text-uppercase text-white">
-						<i class="fa fa-birthday-cake fs-1 text-primary me-3"></i>CakeZone
-					</h1>
-				</a>
+				
+				<FaBirthdayCake className="logo fs-1 text-lgiht me-3" />
+
 				<button
 					class="navbar-toggler"
 					type="button"
@@ -103,14 +104,17 @@ function Navbar({changeRc,changehome, changemenu  ,  changemasterchefs ,changeco
 					data-bs-target="#navbarCollapse">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarCollapse">
-					<div class="navbar-nav ms-auto mx-lg-auto py-0">
-						<a href="index.html" class="nav-item nav-link active" 
+				<div class="collapse navbar-collapse" id="navbarCollapse" style={{"text-transform": "lowercase"}}>
+
+				<div class="navbar-nav ms-auto mx-lg-auto py-0" style={{"text-transform": "lowercase"}}>
+	
+				<a href="index.html" class="nav-item nav-link " 
                         onClick={(event) => {
 								event.preventDefault();
 								changehome();
 							}}
-                        >
+                        style={{"text-transform": "math-auto"
+					}}>
 							Home
 						</a>
 						{/* <a href="about.html" class="nav-item nav-link">About Us</a> */}
@@ -120,7 +124,8 @@ function Navbar({changeRc,changehome, changemenu  ,  changemasterchefs ,changeco
 							onClick={(event) => {
 								event.preventDefault();
 								changemenu();
-							}}>
+							}}style={{"text-transform": "math-auto"
+						}}>
 							Menu & Pricing
 						</a>
 						<a
@@ -130,7 +135,8 @@ function Navbar({changeRc,changehome, changemenu  ,  changemasterchefs ,changeco
 						  event.preventDefault();
 						  changemasterchefs();
 						}}
-					  >
+						style={{"text-transform": "math-auto"
+					}}>
 						Master Chefs
 					    </a>
 						<a href="#" 
@@ -138,7 +144,8 @@ function Navbar({changeRc,changehome, changemenu  ,  changemasterchefs ,changeco
 						onClick={(event) => {
 						event.preventDefault();
 						changecontact();
-						}}>
+						}}style={{"text-transform": "math-auto"
+					}}>
 							Contact Us
 						</a>
 					
@@ -149,8 +156,9 @@ function Navbar({changeRc,changehome, changemenu  ,  changemasterchefs ,changeco
 						onClick={(event) => {
 							event.preventDefault();
 							changeRc();
-						}}>
-							tutorials
+						}}style={{"text-transform": "math-auto"
+					}}>
+							Tutorials
 						</a>
 				
 							

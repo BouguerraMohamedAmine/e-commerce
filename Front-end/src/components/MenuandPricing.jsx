@@ -1,103 +1,108 @@
-import React , { useEffect , useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter, faFacebookF, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
-
-
+const CakeItem = ({ image, price, name, description, quantityAvailable }) => (
+  <div className="col-lg-3 col-md-6 mb-3">
+    <div className="team-item">
+      <div className="position-relative overflow-hidden">
+        <img className="img-fluid w-100" src={image} alt=""/>
+        <div className="team-overlay position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
+          <div className="d-flex align-items-center justify-content-start">
+            <a className="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#">
+              <FontAwesomeIcon icon={faTwitter} className="fw-normal" />
+            </a>
+            <a className="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#">
+              <FontAwesomeIcon icon={faFacebookF} className="fw-normal" />
+            </a>
+            <a className="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#">
+              <FontAwesomeIcon icon={faLinkedinIn} className="fw-normal" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="bg-dark border-inner text-center p-4" style={{ overflow: "auto", maxHeight: "120px" }}>
+        <h4 className="text-uppercase text-primary">{name}</h4>
+        <p className="text-white m-0">{description}</p>
+      </div>
+    </div>
+  </div>
+);
 
 
 const MenuandPricing = () => {
-    const CakeItem = ({ image, price, name, description, quantityAvailable,  }) => (
-        <div className="col-lg-6">
-            <div className="d-flex h-100">
-                <div className="flex-shrink-0">
-                    <h6 className='price-item'>{quantityAvailable}</h6>
-                    <img className="img-fluid" src={image} alt="" style={{ width: '160px', height: '120px' }} />
-                    <h4 className="bg-dark text-primary p-2 m-0">${price}</h4>
-                </div>
-                <div className="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                    <h5 className="text-uppercase">{name}</h5>
-                    
-                    <span>{description}</span>
-                </div>
-            </div>
-        </div>
-    );
-    
-    const TabContent = ({ tabId, items }) => (
-        <div id={tabId} className={`tab-pane fade show p-0 ${tabId === 'tab-1' ? 'active' : ''}`}>
-            <div className="row g-3">
-                {items.map((item, index) => (
-                    <CakeItem key={index} {...item} />
-                ))}
-            </div>
-        </div>
-    );
-    const [birthday, setBirthday] = useState([]);
-    
-      useEffect(() => {
-        axios.get('http://localhost:5000/products/category/Birthday')
-          .then(response => {
-            setBirthday(response.data);
-          })
-          .catch(error => {
-            console.error(error);
-          });
-      }, []);
-      const [wedding, setWedding] = useState([]);
-    
-      useEffect(() => {
-        axios.get('http://localhost:5000/products/category/Wedding')
-          .then(response => {
-            setWedding(response.data);
-          })
-          .catch(error => {
-            console.error(error);
-          });
-      }, []);
+  const [birthday, setBirthday] = useState([]);
+  const [wedding, setWedding] = useState([]);
+  const [party, setParty] = useState([]);
 
-      const [party, setParty] = useState([]);
-    
-      useEffect(() => {
-        axios.get('http://localhost:5000/products/category/Party')
-          .then(response => {
-            setParty(response.data);
-          })
-          .catch(error => {
-            console.error(error);
-          });
-      }, []);
-    const tabs = [
-        { id: 'tab-1', title: 'Birthday', items: birthday },
-        { id: 'tab-2', title: 'Wedding', items: wedding },
-        { id: 'tab-3', title: 'Party', items: party },
-    ];
 
-    return (
-        <div className="container-fluid about py-5">
-            <div className="container">
-                <div className="section-title position-relative text-center mx-auto mb-5 pb-3" style={{ maxWidth: '600px' }}>
-                    <h2 className="text-primary font-secondary">Menu & Pricing</h2>
-                    <h1 className="display-4 text-uppercase">Explore Our Cakes</h1>
-                </div>
-                <div className="tab-class text-center">
-                    <ul className="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase border-inner p-4 mb-5">
-                        {tabs.map((tab) => (
-                            <li key={tab.id} className="nav-item">
-                                <a className={`nav-link text-white ${tab.id === 'tab-1' ? 'active' : ''}`} data-bs-toggle="pill" href={`#${tab.id}`}>
-                                    {tab.title}
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                    <div className="tab-content">
-                        {tabs.map((tab) => (
-                            <TabContent key={tab.id} tabId={tab.id} items={tab.items} />
-                        ))}
-                    </div>
-                </div>
-            </div>
+
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const birthdayResponse = await axios.get('http://localhost:5000/products/category/Birthday');
+        const weddingResponse = await axios.get('http://localhost:5000/products/category/Wedding');
+        const partyResponse = await axios.get('http://localhost:5000/products/category/Party');
+
+        setBirthday(birthdayResponse.data);
+        setWedding(weddingResponse.data);
+        setParty(partyResponse.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // Split the products into three equal parts
+  const chunkedBirthday = chunkArray(birthday, 4);
+  const chunkedWedding = chunkArray(wedding, 4);
+  const chunkedParty = chunkArray(party, 4);
+
+  function chunkArray(arr, chunkSize) {
+    const chunkedArr = [];
+    for (let i = 0; i < arr.length; i += chunkSize) {
+      chunkedArr.push(arr.slice(i, i + chunkSize));
+    }
+    return chunkedArr;
+  }
+
+  return (
+    <div className="container-fluid py-5">
+      <div className="container">
+        <div className="section-title position-relative text-center mx-auto mb-5 pb-3" style={{ maxWidth: '600px' }}>
+          <h2 className="text-primary font-secondary">Menu & Pricing</h2>
+          <h1 className="display-4 text-uppercase">Explore Our Cakes</h1>
         </div>
-    );
+        <div className="row g-3">
+          {chunkedBirthday.map((row, rowIndex) => (
+            <div key={rowIndex} className="row mb-3">
+              {row.map((item, index) => (
+                <CakeItem key={index} {...item} />
+              ))}
+            </div>
+          ))}
+          {chunkedWedding.map((row, rowIndex) => (
+            <div key={rowIndex} className="row mb-3">
+              {row.map((item, index) => (
+                <CakeItem key={index} {...item} />
+              ))}
+            </div>
+          ))}
+          {chunkedParty.map((row, rowIndex) => (
+            <div key={rowIndex} className="row mb-3">
+              {row.map((item, index) => (
+                <CakeItem key={index} {...item} />
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default MenuandPricing;
