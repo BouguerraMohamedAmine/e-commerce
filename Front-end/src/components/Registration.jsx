@@ -9,11 +9,10 @@ function Registration({ auth }) {
     image: '',
     phoneNumber: '',
     city: '',
-    
-
   });
 
   const [usageType, setUsageType] = useState('buying');
+  const [passwordError, setPasswordError] = useState('');
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -25,9 +24,22 @@ function Registration({ auth }) {
 
   const handleRegistration = async (event) => {
     event.preventDefault();
-const usin={using:usageType}
+    const usin = { using: usageType };
+
+    // Check if any of the input fields are empty
+    if (Object.values(userData).some((field) => field === '')) {
+      alert('Please fill out all fields');
+      return;
+    }
+
+    // Check if the password meets your JWT criteria
+    if (!isValidPassword(userData.password)) {
+      alert('Password does not meet criteria');
+      return;
+    }
+
     try {
-      const userDataWithUsageType = { ...userData , ...usin };
+      const userDataWithUsageType = { ...userData, ...usin };
       const response = await axios.post('http://localhost:5000/users', userDataWithUsageType);
       console.log('User registered:', response.data);
     } catch (error) {
@@ -36,10 +48,28 @@ const usin={using:usageType}
     auth();
   };
 
+  const isValidPassword = (password) => {
+    // Implement your password criteria checking logic here
+    // For example, check for minimum length, special characters, etc.
+    if (password.length < 8) {
+      setPasswordError('Password must be at least 8 characters long');
+      return false;
+    }
+
+    // Add more checks as needed
+
+    return true;
+  };
+
   return (
     <div className='body-register'>
+<<<<<<< HEAD
+      <h2>Sign Up</h2>
+      <form>
+=======
     <form style={{width:"500px" , "font-family":"monoscope"}}>
     <h2 style={{"margin-bottom":"20PX"}} >Sign Up</h2>
+>>>>>>> a4c00c86cc8ba965312a5d4048e657e3bc097838
         <div>
           <label>Username:</label>
           <input
@@ -66,7 +96,9 @@ const usin={using:usageType}
             value={userData.password}
             onChange={handleInputChange}
           />
+          <p className="error">{passwordError}</p>
         </div>
+        
         <div>
           <label>Image URL:</label>
           <input

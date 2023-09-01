@@ -7,18 +7,15 @@ import Home from "./components/Home.jsx";
 import Footer from "./components/Footer.jsx";
 import Navbar from "./components/Navbar.jsx";
 import MenuandPricing from "./components/MenuandPricing.jsx";
-import Registration from "./components/Registration.jsx";
-import Authentication from "./components/Authentification.jsx";
-import ContactUs from "./components/ContactUs.jsx";
-import MasterChefs from "./components/MasterChefs.jsx";
-import Search from "./components/Search.jsx";
-import forums from "./components/Forum.jsx";
-import Rc from "./components/Rc.jsx";
-import Forum from "./components/Forum.jsx";
-
-
-
-
+import Registration from './components/Registration.jsx';
+import Authentication from './components/Authentification.jsx';
+import ContactUs from './components/ContactUs.jsx';
+import MasterChefs from './components/MasterChefs.jsx';
+import Search from './components/Search.jsx';
+import forums from './components/Forum.jsx';
+// import Recipes from './components/Recipes.jsx';
+import Rc from  "./components/Rc.jsx"
+import Forum from './components/Forum.jsx';
 
 function App() {
   const [view, setView] = useState("authentication");
