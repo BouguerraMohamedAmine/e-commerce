@@ -18,6 +18,7 @@ import forums from './components/Forum.jsx';
 // import Recipes from './components/Recipes.jsx';
 import Rc from  "./components/Rc.jsx"
 import Forum from './components/Forum.jsx';
+
 function App() {
   const [view, setView] = useState('authentication');
   const [searchResults, setSearchResults] = useState([]);

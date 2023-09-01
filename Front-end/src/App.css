@@ -455,6 +455,7 @@ h6,
     width: 100%;
     border: none;
     background: var(--primary); /* Use the primary color from your palette */
+    
     color: var(--light); /* Use the light color from your palette */
     font-size: 1em;
     font-weight: 600;

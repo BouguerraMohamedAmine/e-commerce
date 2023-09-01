@@ -44,7 +44,7 @@ function Navbar({changeRc,changehome, changemenu  ,  changemasterchefs ,changeco
 	
 	return (
 		<div>
-			<div class="container-fluid px-0 d-none d-lg-block">
+			{/* <div class="container-fluid px-0 d-none d-lg-block">
 				<div class="row gx-0">
 					<div class="col-lg-4 text-center bg-secondary py-3">
 						<div class="d-inline-flex align-items-center justify-content-center">
@@ -86,7 +86,7 @@ function Navbar({changeRc,changehome, changemenu  ,  changemasterchefs ,changeco
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> */}
 			{/* <!-- Topbar End --> */}
 
 			{/* <!-- Navbar Start --> */}
