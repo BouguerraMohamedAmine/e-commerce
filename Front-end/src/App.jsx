@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import "./App.css";
@@ -21,9 +21,26 @@ import Forum from "./components/Forum.jsx";
 
 
 function App() {
-  const [view, setView] = useState("menuandpricing");
+  const [view, setView] = useState("authentication");
   const [searchResults, setSearchResults] = useState([]);
   const [user, setUser] = useState([]);
+ 
+
+  useEffect(() => {
+    // Event listener to prevent default behavior of all anchor tags
+    const preventDefaultForAnchors = (e) => {
+    
+        e.preventDefault();
+        e.stopPropagation();
+    };
+
+    document.addEventListener("click", preventDefaultForAnchors);
+
+    return () => {
+      // Remove the event listener when the component unmounts
+      document.removeEventListener("click", preventDefaultForAnchors);
+    };
+  }, []);
   const changesearch = () => {
     setView("search");
   };
