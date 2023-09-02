@@ -7,7 +7,7 @@ function Rc() {
   const [activeVideo, setActiveVideo] = useState(null);
   const options = {
     method: 'GET',
-    url: 'https://tasty.p.rapidapi.com/recipes/list',
+    url: 'https://tasty.p.rapidapi.com/recipes/--list',
     params: {
       from: '0',
       size: '20',
@@ -39,13 +39,17 @@ function Rc() {
   };
 
   return (
-    <div>
-      <h1>Recipes</h1>
-      <div className="recipes-container">
+    <div className='loading-page' style = {{"min-height": "570px"}}   >
         {isLoading ? (
-          <h1> wait a moment </h1>
-        ) : (
+
+          <div style={{display:"flex" , "flex-direction":"column",
+    "align-items": "center"}}> 
+          <div class="spinner-border" role="status" style={{height:"100px",width:"100px", "color":"black"}}>
+</div>
+  <span style={{color:"black" , "margin-top":"10px"}} >Loading...</span>
+        </div>) : (
           <>
+      <div className="recipes-container" >
             {recipes.map((recipe, index) => (
               <div className='card' key={recipe.id}>
                 {activeVideo === index ? (
@@ -64,16 +68,16 @@ function Rc() {
                       alt={recipe.name}
                       style={{ width: '100%' }}
                     />
-                    <button onClick={() => handlePlayClick(index)}>Play</button>
+                    <button className="custom-btn" onClick={() => handlePlayClick(index)}>Play</button>
                   </>
                 )}
                 <h2>{recipe.name}</h2>
                 <p className="price">{recipe.description}</p>
               </div>
             ))}
+      </div>
           </>
         )}
-      </div>
     </div>
   );
 }

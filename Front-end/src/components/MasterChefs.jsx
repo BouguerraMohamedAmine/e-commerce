@@ -21,13 +21,13 @@ const MasterChefs = () => {
                 <div className="team-overlay w-100 h-100 position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
                   <div className="d-flex align-items-center justify-content-start">
 
- <a className="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#">
+ <a className="btn btn-lg custom-btn  btn-lg-square border-inner rounded-0 mx-1" href="#">
         <FontAwesomeIcon icon={faTwitter} className="fw-normal" />
       </a>                    
-      <a className="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#">
+      <a className="btn btn-lg custom-btn  btn-lg-square border-inner rounded-0 mx-1" href="#">
       <FontAwesomeIcon icon={faFacebookF} className="fw-normal" />
     </a>
-    <a className="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#">
+    <a className="btn btn-lg custom-btn  btn-lg-square border-inner rounded-0 mx-1" href="#">
       <FontAwesomeIcon icon={faLinkedinIn} className="fw-normal" />
     </a>
 

@@ -10,13 +10,13 @@ const CakeItem = ({ image, price, name, description, quantityAvailable }) => (
         <img className="img-fluid w-100" src={image} alt=""/>
         <div className="team-overlay position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
           <div className="d-flex align-items-center justify-content-start">
-            <a className="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#">
+            <a className="btn btn-lg custom-btn  btn-lg-square border-inner rounded-0 mx-1" href="#">
               <FontAwesomeIcon icon={faTwitter} className="fw-normal" />
             </a>
-            <a className="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#">
+            <a className="btn btn-lg custom-btn  btn-lg-square border-inner rounded-0 mx-1" href="#">
               <FontAwesomeIcon icon={faFacebookF} className="fw-normal" />
             </a>
-            <a className="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#">
+            <a className="btn btn-lg custom-btn  btn-lg-square border-inner rounded-0 mx-1" href="#">
               <FontAwesomeIcon icon={faLinkedinIn} className="fw-normal" />
             </a>
           </div>
@@ -24,6 +24,7 @@ const CakeItem = ({ image, price, name, description, quantityAvailable }) => (
       </div>
       <div className="bg-dark border-inner text-center p-4" style={{ overflow: "auto", maxHeight: "120px" }}>
         <h4 className="text-uppercase text-primary">{name}</h4>
+            <p className="text-white text-">{price}</p>
         <p className="text-white m-0">{description}</p>
       </div>
     </div>

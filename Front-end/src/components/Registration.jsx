@@ -63,13 +63,8 @@ function Registration({ auth }) {
 
   return (
     <div className='body-register'>
-<<<<<<< HEAD
-      <h2>Sign Up</h2>
-      <form>
-=======
     <form style={{width:"500px" , "font-family":"monoscope"}}>
     <h2 style={{"margin-bottom":"20PX"}} >Sign Up</h2>
->>>>>>> a4c00c86cc8ba965312a5d4048e657e3bc097838
         <div>
           <label>Username:</label>
           <input

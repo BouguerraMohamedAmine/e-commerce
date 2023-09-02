@@ -15,7 +15,7 @@ console.log("inhome",user);
 							<h1 class="display-1 text-uppercase text-white mb-4">CakeZone</h1>
 							<h1 class="text-uppercase text-white">The Best Cake In London</h1>
 							<div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
-								<a href="" class="btn btn-primary border-inner py-3 px-5 me-5">
+								<a href="" class=" custom-btn  border-inner py-3 px-5 me-5">
 									Read More
 								</a>
 								<a href="https://www.youtube.com/watch?v=nI2tfHUAN1s"><button
@@ -50,7 +50,7 @@ console.log("inhome",user);
               <img
                 className="position-absolute w-100 h-100"
                 src={about}
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'cover' , "border-radius":"25px"}}
                 alt="About CakeZone"
               />
             </div>
@@ -69,7 +69,7 @@ console.log("inhome",user);
               <div className="col-sm-6">
                 <div
                   className="d-flex align-items-center justify-content-center bg-primary border-inner mb-4"
-                  style={{ width: '90px', height: '90px' }}
+                  style={{ width: '90px', height: '90px' , "border-radius": "25px" }}
                 >
                  <FaHeartbeat className="text-white" size="2rem" />
                 </div>
@@ -81,8 +81,8 @@ console.log("inhome",user);
               </div>
               <div className="col-sm-6">
                 <div
-                  className="d-flex align-items-center justify-content-center bg-primary border-inner mb-4"
-                  style={{ width: '90px', height: '90px' }}
+                  className="d-flex align-items-center justify-content-center bg-primary border-inner mb-4 rounded-25"
+                  style={{ width: '90px', height: '90px' , "border-radius": "25px" }}
                 >
                   <FaAward className="text-white" size="2rem" />
                 </div>
