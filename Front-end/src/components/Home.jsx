@@ -4,10 +4,12 @@ import { FaStar, FaUsers, FaCheck, FaMugHot } from 'react-icons/fa';
 import about from "../img/about.jpg";
 import AddPost from "./AddPost.jsx"
 import DisplayAbout from './DisplayAbout.jsx';
+
 function Home({user}) {
 console.log("inhome",user);
   return (
     <div>
+    
     	<div class="container-fluid bg-primary py-5 mb-5 hero-header">
 				<div class="container py-5">
 					<div class="row justify-content-start">
