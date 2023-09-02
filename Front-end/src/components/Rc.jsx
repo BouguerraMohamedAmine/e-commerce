@@ -7,7 +7,7 @@ function Rc() {
   const [activeVideo, setActiveVideo] = useState(null);
   const options = {
     method: 'GET',
-    url: 'https://tasty.p.rapidapi.com/recipes/list',
+    url: 'https://tasty.p.rapidapi.com/recipes/--list',
     params: {
       from: '0',
       size: '20',
