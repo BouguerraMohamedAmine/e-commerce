@@ -32,7 +32,7 @@ const ProductItem = ({ product }) => {
   );
 };
 
-const Prods = () => {
+const MenuandPricing = () => {
   const [birthday, setBirthday] = useState([]);
   const [wedding, setWedding] = useState([]);
   const [party, setParty] = useState([]);
@@ -57,7 +57,7 @@ const Prods = () => {
 
   return (
     <div className="products-wrapper" style={{"margin-top" : "90px" }}>
-      <div className="row"  >
+      <div className="row" >
         {birthday.map((product) => (
           <ProductItem key={product.id} product={product} />
         ))}
@@ -72,4 +72,4 @@ const Prods = () => {
   );
 };
 
-export default Prods;
+export default MenuandPricing;

@@ -1,145 +1,166 @@
-import React , {useState} from "react";
+import React, { useState } from "react";
 import { FaBirthdayCake } from "react-icons/fa";
 import { BiEnvelope } from "react-icons/bi";
-import axios from 'axios'
+import axios from "axios";
 // import { BiPhoneVibrate } from 'react-icons/bi';
 
-function Navbar({changeRc,changehome, changemenu  ,  changemasterchefs ,changecontact , Searches,changesearch  , changeforums}) {
+function Navbar({
+  changeRc,
+  changehome,
+  changemenu,
+  changemasterchefs,
+  changecontact,
+  Searches,
+  changesearch,
+  changeforums,
+}) {
+  const [searchText, setSearchText] = useState("");
 
-	const [searchText, setSearchText] = useState("");
+  const [activeLink, setActiveLink] = useState("home"); // Initialize with the default active link
 
-	const [activeLink, setActiveLink] = useState('home'); // Initialize with the default active link
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+  };
 
-	const handleLinkClick = (link) => {
-	  setActiveLink(link);
-	};
-  
+  const handleSearch = async () => {
+    changesearch();
+    try {
+      if (searchText.trim() === "") {
+        console.error("Search text is empty.");
+        return;
+      }
 
+      console.log("Fetching all products.");
+      const response = await axios.get(`http://127.0.0.1:5000/products`);
 
+      const filteredProducts = response.data.filter((product) => {
+        const lowerSearchText = searchText.toLowerCase();
+        return (
+          product.name.toLowerCase().includes(lowerSearchText) ||
+          product.description.toLowerCase().includes(lowerSearchText) ||
+          product.price.toLowerCase().includes(lowerSearchText) ||
+          product.category.toLowerCase().includes(lowerSearchText)
+        );
+      });
 
-    const handleSearch = async () => {
-		changesearch();
-		try {
-			if (searchText.trim() === "") {
-				console.error("Search text is empty.");
-				return;
-			}
-	
-			console.log("Fetching all products.");
-			const response = await axios.get(`http://127.0.0.1:5000/products`);
-	
-			const filteredProducts = response.data.filter((product) => {
-				const lowerSearchText = searchText.toLowerCase();
-				return (
-					product.name.toLowerCase().includes(lowerSearchText) ||
-					product.description.toLowerCase().includes(lowerSearchText) ||
-					product.price.toLowerCase().includes(lowerSearchText) ||
-					product.category.toLowerCase().includes(lowerSearchText)
-				);
-			});
-	
-			Searches(filteredProducts);
-			console.log("Filtered products:", filteredProducts);
-		} catch (error) {
-			console.error("Error fetching products:", error.response);
-			Searches([]);
-		}
-	};
-	
-	
-	return (
-		<div>
-			{/* <!-- Navbar Start --> */}
-			<nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-				
-				<FaBirthdayCake className="logo fs-1 text-lgiht me-3" />
+      Searches(filteredProducts);
+      console.log("Filtered products:", filteredProducts);
+    } catch (error) {
+      console.error("Error fetching products:", error.response);
+      Searches([]);
+    }
+  };
 
-			
-				<div className="collapse navbar-collapse" id="navbarCollapse" style={{ textTransform: 'lowercase' }}>
-				<div className="navbar-nav ms-auto mx-lg-auto py-0" style={{ textTransform: 'lowercase' }}>
-				  <a
-					href="index.html"
-					className={`nav-item nav-link ${activeLink === 'home' ? 'active' : ''}`}
-					onClick={(event) => {
-					  event.preventDefault();
-					  handleLinkClick('home');
-					  changehome();
-					}}
-				  >
-					Home
-				  </a>
-				  <a
-					href="menu.html"
-					className={`nav-item nav-link ${activeLink === 'menu' ? 'active' : ''}`}
-					onClick={(event) => {
-					  event.preventDefault();
-					  handleLinkClick('menu');
-					  changemenu();
-					}}
-				  >
-					Menu & Pricing
-				  </a>
-				  <a
-					href="#"
-					className={`nav-item nav-link ${activeLink === 'masterchefs' ? 'active' : ''}`}
-					onClick={(event) => {
-					  event.preventDefault();
-					  handleLinkClick('masterchefs');
-					  changemasterchefs();
-					}}
-				  >
-					Master Chefs
-				  </a>
-				  <a
-					href="#"
-					className={`nav-item nav-link ${activeLink === 'contact' ? 'active' : ''}`}
-					onClick={(event) => {
-					  event.preventDefault();
-					  handleLinkClick('contact');
-					  changecontact();
-					}}
-				  >
-					Contact Us
-				  </a>
-				  <a
-					href="menu.html"
-					className={`nav-item nav-link ${activeLink === 'tutorials' ? 'active' : ''}`}
-					onClick={(event) => {
-					  event.preventDefault();
-					  handleLinkClick('tutorials');
-					  changeRc();
-					}}
-				  >
-					Tutorials
-				  </a>
-				</div>
-				<form className="search-bar" role="search">
-                        <input
-                          className="form-control me-2 search-input"
-                          type="search"
-                          placeholder="Type something ..."
-                          aria-label="Search"
-                          value={searchText}
-                          onChange={(e) => setSearchText(e.target.value)}
-                        />
-                        <button
-                        className="btn btn-outline-success search-btn"
-                        type="button"  
-                        onClick={handleSearch}
-						style={{    "min-width":" 100px"}}
-                      >
-                        Search
-                      </button>
-                    
-                    
-                      </form>
-				</div>
-			</nav>
+  return (
+    <div>
+      {/* <!-- Navbar Start --> */}
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+        <FaBirthdayCake className="logo fs-1 text-lgiht me-3" />
 
-			{/* hero */}
-		
-		</div>
-	);
+        <div
+          className="collapse navbar-collapse"
+          id="navbarCollapse"
+          style={{ textTransform: "lowercase" }}
+        >
+          <div
+            className="navbar-nav ms-auto mx-lg-auto py-0"
+            style={{ textTransform: "lowercase" }}
+          >
+            <a
+              href="index.html"
+              className={`nav-item nav-link ${
+                activeLink === "home" ? "active" : ""
+              }`}
+              onClick={(event) => {
+                event.preventDefault();
+                handleLinkClick("home");
+                changehome();
+              }}
+              style={{ "text-transform": "math-auto" }}
+            >
+              Home
+            </a>
+            <a
+              href="menu.html"
+              className={`nav-item nav-link ${
+                activeLink === "menu" ? "active" : ""
+              }`}
+              onClick={(event) => {
+                event.preventDefault();
+                handleLinkClick("menu");
+                changemenu();
+              }}
+              style={{ "text-transform": "math-auto" }}
+            >
+              Menu & Pricing
+            </a>
+            <a
+              href="#"
+              className={`nav-item nav-link ${
+                activeLink === "masterchefs" ? "active" : ""
+              }`}
+              onClick={(event) => {
+                event.preventDefault();
+                handleLinkClick("masterchefs");
+                changemasterchefs();
+              }}
+              style={{ "text-transform": "math-auto" }}
+            >
+              Master Chefs
+            </a>
+            <a
+              href="#"
+              className={`nav-item nav-link ${
+                activeLink === "contact" ? "active" : ""
+              }`}
+              onClick={(event) => {
+                event.preventDefault();
+                handleLinkClick("contact");
+                changecontact();
+              }}
+              style={{ "text-transform": "math-auto" }}
+            >
+              Contact Us
+            </a>
+            <a
+              href="menu.html"
+              className={`nav-item nav-link ${
+                activeLink === "tutorials" ? "active" : ""
+              }`}
+              onClick={(event) => {
+                event.preventDefault();
+                handleLinkClick("tutorials");
+                changeRc();
+              }}
+              style={{ "text-transform": "math-auto" }}
+            >
+              Tutorials
+            </a>
+          </div>
+          <form className="search-bar" role="search">
+            <input
+              className="form-control me-2 search-input"
+              type="search"
+              placeholder="Type something ..."
+              aria-label="Search"
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+            />
+            <button
+              className="btn btn-outline-success search-btn"
+              type="button"
+              onClick={handleSearch}
+              style={{ "min-width": " 100px" }}
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+
+      {/* hero */}
+    </div>
+  );
 }
 
 export default Navbar;

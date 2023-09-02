@@ -21,7 +21,7 @@ import Forum from "./components/Forum.jsx";
 
 
 function App() {
-  const [view, setView] = useState("Prods");
+  const [view, setView] = useState("menuandpricing");
   const [searchResults, setSearchResults] = useState([]);
   const [user, setUser] = useState([]);
   const changesearch = () => {
