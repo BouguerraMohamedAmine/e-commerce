@@ -10,25 +10,33 @@ function Search({ searchResults }) {
             ) : (
                 <div className="tab-content" style={{"margin-top":"50px","margin-left":"30px"}}>
                     <div className="row g-3">
-                        {searchResults.map((item) => (
-                            <div className="col-lg-6" key={item.id}>
-                                <div className="d-flex h-100">
-                                    <div className="flex-shrink-0">
-                                        <h6 className="price-item">{item.quantityAvailable}</h6>
-                                        <img
-                                            className="img-fluid"
-                                            src={item.image}
-                                            alt=""
-                                            style={{ width: '160px', height: '120px' }}
-                                        />
-                                        <h4 className="bg-dark text-primary p-2 m-0">${item.price}</h4>
-                                    </div>
-                                    <div className="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 className="text-uppercase">{item.name}</h5>
-                                        <span>{item.description}</span>
-                                    </div>
-                                </div>
-                            </div>
+                        {searchResults.map((product) => (
+                            <div className="col-md-3 col-sm-6">
+      <div className="product-grid3">
+        <div className="product-image3">
+          <a href="#">
+            <img className="pic-2" src={product.image} alt={product.title} />
+            <img className="pic-1" src={product.image} alt={product.title} />
+          </a>
+          <ul className="social">
+            <li><a href="#"><i className="fa fa-eye"></i></a></li>
+            <li><a href="#"><i className="fa fa-shopping-cart"></i></a></li>
+          </ul>
+          <span className="product-new-label">New</span>
+        </div>
+        <div className="product-content">
+          <h3 className="title"><a href="#">{`${product.name}`}</a></h3>
+          <div className="price">
+            {`$${product.price}`}
+          </div>
+          <ul className="rating">
+            {Array.from({ length: 5 }, (_, i) => (
+              <li key={i} className={`fa fa-star${i >= product.rating ? ' enable' : ''}`}></li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
                         ))}
                     </div>
                 </div>
