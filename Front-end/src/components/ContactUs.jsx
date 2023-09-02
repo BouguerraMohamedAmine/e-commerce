@@ -120,7 +120,7 @@ const ContactUs = () => {
                   ></textarea>
                 </div>
                 <div className="col-sm-12">
-                  <button className="btn btn-primary border-inner w-100 py-3" type="submit">
+                  <button className="custom-btn  border-inner w-100 py-3" type="submit">
                     Send Message
                   </button>
                 </div>

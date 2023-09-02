@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FaBirthdayCake } from "react-icons/fa";
 import { BiEnvelope } from "react-icons/bi";
 import axios from "axios";
-// import { BiPhoneVibrate } from 'react-icons/bi';
 
 function Navbar({
   changeRc,
@@ -15,8 +14,7 @@ function Navbar({
   changeforums,
 }) {
   const [searchText, setSearchText] = useState("");
-
-  const [activeLink, setActiveLink] = useState("home"); // Initialize with the default active link
+  const [activeLink, setActiveLink] = useState("home");
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
@@ -53,19 +51,10 @@ function Navbar({
 
   return (
     <div>
-      {/* <!-- Navbar Start --> */}
-      <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
+      <nav className="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
         <FaBirthdayCake className="logo fs-1 text-lgiht me-3" />
-
-        <div
-          className="collapse navbar-collapse"
-          id="navbarCollapse"
-          style={{ textTransform: "lowercase" }}
-        >
-          <div
-            className="navbar-nav ms-auto mx-lg-auto py-0"
-            style={{ textTransform: "lowercase" }}
-          >
+        <div className="collapse navbar-collapse" id="navbarCollapse">
+          <div className="navbar-nav ms-auto mx-lg-auto py-0">
             <a
               href="index.html"
               className={`nav-item nav-link ${
@@ -76,7 +65,6 @@ function Navbar({
                 handleLinkClick("home");
                 changehome();
               }}
-              style={{ "text-transform": "math-auto" }}
             >
               Home
             </a>
@@ -90,7 +78,6 @@ function Navbar({
                 handleLinkClick("menu");
                 changemenu();
               }}
-              style={{ "text-transform": "math-auto" }}
             >
               Menu & Pricing
             </a>
@@ -104,7 +91,6 @@ function Navbar({
                 handleLinkClick("masterchefs");
                 changemasterchefs();
               }}
-              style={{ "text-transform": "math-auto" }}
             >
               Master Chefs
             </a>
@@ -118,7 +104,6 @@ function Navbar({
                 handleLinkClick("contact");
                 changecontact();
               }}
-              style={{ "text-transform": "math-auto" }}
             >
               Contact Us
             </a>
@@ -132,7 +117,6 @@ function Navbar({
                 handleLinkClick("tutorials");
                 changeRc();
               }}
-              style={{ "text-transform": "math-auto" }}
             >
               Tutorials
             </a>
@@ -147,18 +131,16 @@ function Navbar({
               onChange={(e) => setSearchText(e.target.value)}
             />
             <button
-              className="btn btn-outline-success search-btn"
+              className="custom-btn"
               type="button"
               onClick={handleSearch}
-              style={{ "min-width": " 100px" }}
+              style={{ minWidth: "100px" , "padding-bottom": "15px"}}
             >
               Search
             </button>
           </form>
         </div>
       </nav>
-
-      {/* hero */}
     </div>
   );
 }

@@ -36,13 +36,13 @@ const Footer = () => {
                 <p className="mb-0">07775000</p>
             </div>
             <div className="d-flex mt-4">
-                        <a className="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#">
+                        <a className="btn-lg custom-btn  btn-lg-square border-inner rounded-0 me-2" href="#">
                             <FontAwesomeIcon icon={faTwitter} className="fw-normal" />
                         </a>
-                        <a className="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#">
+                        <a className="btn-lg custom-btn  btn-lg-square border-inner rounded-0 me-2" href="#">
                             <FontAwesomeIcon icon={faFacebookF} className="fw-normal" />
                         </a>
-                        <a className="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 me-2" href="#">
+                        <a className="btn-lg custom-btn  btn-lg-square border-inner rounded-0 me-2" href="#">
                             <FontAwesomeIcon icon={faLinkedinIn} className="fw-normal" />
                         </a>
                     </div>
@@ -65,7 +65,7 @@ const Footer = () => {
             <form action="">
                 <div className="input-group">
                     <input type="text" className="form-control border-white p-3" placeholder="Your Email" />
-                    <button className="btn btn-primary">Sign Up</button>
+                    <button className="custom-btn ">Sign Up</button>
                 </div>
             </form>
         </div>

@@ -2,7 +2,9 @@
   height: 80px;
   width: 80px;
 }
-
+body{
+  background: linear-gradient(135deg, #e88f2a5b, #faf3eb7c);
+}
 /********** Template CSS **********/
 :root {
   --primary: #e88f2a;
@@ -54,14 +56,8 @@ h6,
   font-weight: 500 !important;
 }
 
-.btn {
-  font-family: "Oswald", sans-serif;
-  font-weight: 600;
-  transition: 0.5s;
-}
-
-.btn-primary {
-  color: #ffffff;
+.custom-btn  {
+  color: #FFFFFF;
 }
 
 .border-inner {
@@ -355,9 +351,9 @@ h6,
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  font-family: "Arial", sans-serif;
-  width: 1920px;
+  
+  font-family: 'Arial', sans-serif;
+ height: 100vh;
 }
 
 .form_main {
@@ -404,7 +400,7 @@ h6,
 
 .heading {
   font-size: 2.5em;
-  color: var(--dark); /* Use the dark color from your palette */
+  color: var(--dark); 
   font-weight: 700;
   margin-bottom: 20px;
   text-align: center;
@@ -488,13 +484,8 @@ h6,
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    var(--secondary)
-  ); /* Use primary and secondary colors */
-  width: 1920px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary)); /* Use primary and secondary colors */
+
   margin: 0;
   font-family: "Arial", sans-serif;
 }
@@ -658,20 +649,19 @@ h6,
 /* recepies css  */
 
 .recipes-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Creates a grid with 5 columns */
+  gap: 20px; /* Adjust the gap between cards as needed */
 }
-
 .card {
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  width: calc(33.33% - 20px);
+
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
 }
 
 .card:hover {
@@ -681,7 +671,26 @@ h6,
 
 .card img {
   max-width: 100%;
-  height: auto;
+  height: auto; /* Ensure images scale proportionally */
+}
+@media (max-width: 992px) {
+  .recipes-container {
+    grid-template-columns: repeat(3, 1fr); /* Change to 3 columns for tablets */
+  }
+}
+
+/* Media query for even smaller screens (e.g., mobile phones) */
+@media (max-width: 768px) {
+  .recipes-container {
+    grid-template-columns: repeat(2, 1fr); /* Change to 2 columns for mobile phones */
+  }
+}
+
+/* Media query for very small screens (e.g., small mobile phones) */
+@media (max-width: 480px) {
+  .recipes-container {
+    grid-template-columns: 1fr; /* Change to 1 column for small mobile phones */
+  }
 }
 
 .card h2 {
@@ -694,7 +703,7 @@ h6,
 }
 
 .card button {
-  background-color: #007bff;
+  background-color: #000000;
   border: none;
   color: white;
   padding: 10px 20px;
@@ -707,7 +716,6 @@ h6,
   border-radius: 5px;
 }
 
-/********************* Shopping Demo-3 **********************/
 .product-grid3 {
   font-family: Roboto, sans-serif;
   text-align: center;
@@ -887,4 +895,33 @@ padding: 50px;
 }
 .carousel-inner{
   border-radius:25px
+}
+.loading-page {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; 
+}
+.navbar-expand-lg .navbar-collapse {
+  gap: 0px;
+}
+.custom-btn {
+  background: transparent;
+    border:none;
+    color: #e88f2a;
+    font-weight: 600;
+    font-family: monospace;
+    padding-top: 12px;
+    border-radius: 10px;
+
+}
+
+.custom-btn:hover {
+  background: #e88f2a;
+    color: rgb(255, 255, 255);
+  
+}
+
+.search-btn {
+  min-width: 100px;
+  padding: 6px;
 }
