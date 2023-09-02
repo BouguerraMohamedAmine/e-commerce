@@ -8,7 +8,12 @@ function Navbar({changeRc,changehome, changemenu  ,  changemasterchefs ,changeco
 
 	const [searchText, setSearchText] = useState("");
 
+	const [activeLink, setActiveLink] = useState('home'); // Initialize with the default active link
 
+	const handleLinkClick = (link) => {
+	  setActiveLink(link);
+	};
+  
 
 
 
@@ -49,79 +54,65 @@ function Navbar({changeRc,changehome, changemenu  ,  changemasterchefs ,changeco
 				
 				<FaBirthdayCake className="logo fs-1 text-lgiht me-3" />
 
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarCollapse">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarCollapse" style={{"text-transform": "lowercase"}}>
-
-				<div class="navbar-nav ms-auto mx-lg-auto py-0" style={{"text-transform": "lowercase"}}>
-	
-				<a href="index.html" class="nav-item nav-link " 
-                        onClick={(event) => {
-								event.preventDefault();
-								changehome();
-							}}
-                        style={{"text-transform": "math-auto"
-					}}>
-							Home
-						</a>
-						{/* <a href="about.html" class="nav-item nav-link">About Us</a> */}
-						<a
-							href="menu.html"
-							className="nav-item nav-link"
-							onClick={(event) => {
-								event.preventDefault();
-								changemenu();
-							}}style={{"text-transform": "math-auto"
-						}}>
-							Menu & Pricing
-						</a>
-						<a
-						href="#"
-						className="nav-item nav-link"
-						onClick={(event) => {
-						  event.preventDefault();
-						  changemasterchefs();
-						}}
-						style={{"text-transform": "math-auto"
-					}}>
-						Master Chefs
-					    </a>
-						<a href="#" 
-						className="nav-item nav-link"
-						onClick={(event) => {
-						event.preventDefault();
-						changecontact();
-						}}style={{"text-transform": "math-auto"
-					}}>
-							Contact Us
-						</a>
-					
-
-						<a
-						href="menu.html"
-						className="nav-item nav-link"
-						onClick={(event) => {
-							event.preventDefault();
-							changeRc();
-						}}style={{"text-transform": "math-auto"
-					}}>
-							Tutorials
-						</a>
-				
-							
-							
-							
-							
-						
-
-
-
-					</div>
+			
+				<div className="collapse navbar-collapse" id="navbarCollapse" style={{ textTransform: 'lowercase' }}>
+				<div className="navbar-nav ms-auto mx-lg-auto py-0" style={{ textTransform: 'lowercase' }}>
+				  <a
+					href="index.html"
+					className={`nav-item nav-link ${activeLink === 'home' ? 'active' : ''}`}
+					onClick={(event) => {
+					  event.preventDefault();
+					  handleLinkClick('home');
+					  changehome();
+					}}
+				  >
+					Home
+				  </a>
+				  <a
+					href="menu.html"
+					className={`nav-item nav-link ${activeLink === 'menu' ? 'active' : ''}`}
+					onClick={(event) => {
+					  event.preventDefault();
+					  handleLinkClick('menu');
+					  changemenu();
+					}}
+				  >
+					Menu & Pricing
+				  </a>
+				  <a
+					href="#"
+					className={`nav-item nav-link ${activeLink === 'masterchefs' ? 'active' : ''}`}
+					onClick={(event) => {
+					  event.preventDefault();
+					  handleLinkClick('masterchefs');
+					  changemasterchefs();
+					}}
+				  >
+					Master Chefs
+				  </a>
+				  <a
+					href="#"
+					className={`nav-item nav-link ${activeLink === 'contact' ? 'active' : ''}`}
+					onClick={(event) => {
+					  event.preventDefault();
+					  handleLinkClick('contact');
+					  changecontact();
+					}}
+				  >
+					Contact Us
+				  </a>
+				  <a
+					href="menu.html"
+					className={`nav-item nav-link ${activeLink === 'tutorials' ? 'active' : ''}`}
+					onClick={(event) => {
+					  event.preventDefault();
+					  handleLinkClick('tutorials');
+					  changeRc();
+					}}
+				  >
+					Tutorials
+				  </a>
+				</div>
 				<form className="search-bar" role="search">
                         <input
                           className="form-control me-2 search-input"

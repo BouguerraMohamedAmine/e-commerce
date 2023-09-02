@@ -12,7 +12,7 @@ import Authentication from "./components/Authentification.jsx";
 import ContactUs from "./components/ContactUs.jsx";
 import MasterChefs from "./components/MasterChefs.jsx";
 import Search from "./components/Search.jsx";
-import forums from "./components/Forum.jsx";
+import DisplayAbout from "./components/DisplayAbout.jsx";
 import Rc from "./components/Rc.jsx";
 import Forum from "./components/Forum.jsx";
 
@@ -21,7 +21,7 @@ import Forum from "./components/Forum.jsx";
 
 
 function App() {
-  const [view, setView] = useState("authentication");
+  const [view, setView] = useState("Prods");
   const [searchResults, setSearchResults] = useState([]);
   const [user, setUser] = useState([]);
   const changesearch = () => {

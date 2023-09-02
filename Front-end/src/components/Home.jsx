@@ -3,6 +3,7 @@ import { FaHeartbeat , FaAward } from 'react-icons/fa';
 import { FaStar, FaUsers, FaCheck, FaMugHot } from 'react-icons/fa';
 import about from "../img/about.jpg";
 import AddPost from "./AddPost.jsx"
+import DisplayAbout from './DisplayAbout.jsx';
 function Home({user}) {
 console.log("inhome",user);
   return (
@@ -12,8 +13,8 @@ console.log("inhome",user);
 					<div class="row justify-content-start">
 						<div class="col-lg-8 text-center text-lg-start">
 							<h1 class="font-secondary text-primary mb-4">Super Crispy</h1>
-							<h1 class="display-1 text-uppercase text-white mb-4">CakeZone</h1>
-							<h1 class="text-uppercase text-white">The Best Cake In London</h1>
+							<h1 class="display-1 text-white font-secondary">CakeZone</h1>
+							<h1 class="text-math text-white font-secondary">The Best Cake In Tunisia</h1>
 							<div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
 								<a href="" class="btn btn-primary border-inner py-3 px-5 me-5">
 									Read More
@@ -42,29 +43,19 @@ console.log("inhome",user);
           style={{ maxWidth: '600px' }}
         >
           <h2 className="text-primary font-secondary">About Us</h2>
-          <h1 className="display-4 text-uppercase">Welcome To CakeZone</h1>
+          <h1 className="display-4 text-math">Welcome To CakeZone</h1>
         </div>
         <div className="row gx-5">
-          <div className="col-lg-5 mb-5 mb-lg-0" style={{ minHeight: '400px' }}>
-            <div className="position-relative h-100">
-              <img
-                className="position-absolute w-100 h-100"
-                src={about}
-                style={{ objectFit: 'cover' }}
-                alt="About CakeZone"
-              />
+          <div className="col-lg-5 mb-5 mb-lg-0" style={{ minHeight: '400px' ,  }}>
+            <div className="position-relative h-100" id='about-pics'>
+              <DisplayAbout about={about}/>
             </div>
           </div>
           <div className="col-lg-6 pb-5">
             <h4 className="mb-4">
-              Tempor erat elitr rebum clita. Diam dolor diam ipsum erat lorem sed stet labore lorem
-              sit clita duo
-            </h4>
+            Cake Zone, born from the creative minds of Bouguerra Med Amine and Iheb Machraoui, is your ultimate destination for all things sweet and delightful </h4>
             <p className="mb-5">
-              Tempor erat elitr at rebum at at clita. Diam dolor diam ipsum et tempor sit. Clita
-              erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et
-              tempor eirmod magna dolore erat amet magna
-            </p>
+            With a shared passion for the art of baking and a commitment to making celebrations even more special             we embarked on this journey to bring you a platform where you can buy and sell cakes and desserts like never before. Our mission is to satisfy your sweet cravings while connecting talented bakers with dessert enthusiasts. Welcome to Cake Zone, where every bite is a piece of happiness, and every creation tells a story. Join us in celebrating life's sweet moments!            </p>
             <div className="row g-5">
               <div className="col-sm-6">
                 <div
@@ -75,9 +66,7 @@ console.log("inhome",user);
                 </div>
                 <h4 className="text-uppercase">100% Healthy</h4>
                 <p className="mb-0">
-                  Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor
-                  vero
-                </p>
+                a delicious and nutritious option that guarantees 100% healthiness in every bite. Packed with natural, wholesome ingredients                </p>
               </div>
               <div className="col-sm-6">
                 <div
@@ -88,8 +77,7 @@ console.log("inhome",user);
                 </div>
                 <h4 className="text-uppercase">Award Winning</h4>
                 <p className="mb-0">
-                  Labore justo vero ipsum sit clita erat lorem magna clita nonumy dolor magna dolor
-                  vero
+                healthy product has received the prestigious "Health and Wellness Innovation Award.
                 </p>
               </div>
             </div>
