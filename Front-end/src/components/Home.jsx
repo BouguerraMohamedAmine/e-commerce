@@ -91,7 +91,7 @@ console.log("inhome",user);
 <div className="container-fluid bg-img py-5 mb-5" style={{"margin-top":"30px"}}>
     <div className="container py-5" >
         <div className="row gx-5 gy-4" style={{ flexDirection: 'column' }}>
-            {user.using=== 'selling' && <AddPost  />}
+             <AddPost  />
         </div>
     </div>
 </div>
