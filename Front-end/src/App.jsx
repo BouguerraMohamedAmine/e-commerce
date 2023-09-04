@@ -30,7 +30,7 @@ function App() {
     // Event listener to prevent default behavior of all anchor tags
     const preventDefaultForAnchors = (e) => {
     
-        e.preventDefault();
+        // e.preventDefault();
         e.stopPropagation();
     };
 
